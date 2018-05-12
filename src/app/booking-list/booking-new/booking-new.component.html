@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Book For party</h1>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+      <div class="form-group"
+           [ngClass]="{'has-error':!bookingForm.controls['firstName'].valid
+         &&bookingForm.controls['firstName'].touched}">
+        <label for="firstName">first name</label>
+        <input type="text"
+               class="form-control"
+               id="firstName"
+               formControlName="firstName"
+               placeholder="first name"/>
+      </div>
+      <div class="form-group"
+           [ngClass]="{'has-error':!bookingForm.controls['lastName'].valid
+    &&bookingForm.controls['lastName'].touched}">
+        <label for="lastName">last name</label>
+        <input type="text"
+               class="form-control"
+               id="lastName"
+               formControlName="lastName"
+               placeholder="last name"/>
+      </div>
+      <div class="form-group"
+           [ngClass]="{'has-error':!bookingForm.controls['time'].valid
+         &&bookingForm.controls['time'].touched}">
+        <label for="time">when?</label>
+        <input type="datetime-local"
+               class="form-control"
+               id="time"
+               formControlName="time"
+               placeholder="2"/>
+      </div>
+      <div class="form-group"
+           [ngClass]="{'has-error':!bookingForm.controls['size'].valid
+         &&bookingForm.controls['size'].touched}">
+        <label for="size">how many people?</label>
+        <input type="number"
+               class="form-control"
+               id="size"
+               formControlName="size"
+               placeholder="2"/>
+      </div>
+      <div class="form-group"
+           [ngClass]="{'has-error':!bookingForm.controls['telephone'].valid
+         &&bookingForm.controls['telephone'].touched}">
+        <label for="telephone">Telephone</label>
+        <input type="tel"
+               class="form-control"
+               id="telephone"
+               formControlName="telephone"
+               placeholder="Telephone"/>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!bookingForm.valid">Booking</button>
+      <button class="btn btn-danger">Cancel</button>
+    </form>
+  </div>
+</div>
+
